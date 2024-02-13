@@ -4,6 +4,7 @@
 
 <nav>
   <ul>
+    <!-- Met de forEach loop zorg ik ervoor dat hij voor elke squad een li is met alle info erin -->
     <% squads.forEach(squad => { %>
     <li>
       <a href="./squad/<%= squad.id %>">
@@ -16,6 +17,7 @@
 
 <h2>Students</h2>
 <ul>
+  <!-- Met de forEach loop zorg ik ervoor dat hij voor elk persoon een li is met alle info erin -->
   <% persons.forEach(person => { %>
     <li><a href="./person/<%= person.id %>"><%= person.name %></a>, squad_id <%= person.squad_id %></li>
   <% }) %>
