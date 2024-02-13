@@ -1,5 +1,19 @@
 <%- include('./partials/head') %>
 
+<h1>Kies een squad</h1>
+
+<nav>
+  <ul>
+    <% squads.forEach(squad => { %>
+    <li>
+      <a href="./squad/<%= squad.id %>">
+        <h2><%= squad.name %></h2>
+      </a>
+    </li>
+    <% }) %>
+  </ul>
+</nav>
+
 <h2>Students</h2>
 <ul>
   <% persons.forEach(person => { %>
