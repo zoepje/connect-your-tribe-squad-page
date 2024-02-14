@@ -15,12 +15,4 @@
   </ul>
 </nav>
 
-<h2>Students</h2>
-<ul>
-  <!-- Met de forEach loop zorg ik ervoor dat hij voor elk persoon een li is met alle info erin -->
-  <% persons.forEach(person => { %>
-    <li><a href="./person/<%= person.id %>"><%= person.name %></a>, squad_id <%= person.squad_id %></li>
-  <% }) %>
-</ul>
-
 <%- include('./partials/foot') %>
