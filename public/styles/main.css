@@ -3,6 +3,44 @@
   scroll-behavior: smooth;
 }
 
-img{
-  width: 300px;
+h1{
+  text-align: center;
 }
+
+ul{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.squadCard{
+  list-style: none;
+  width: 300px;
+  height: 400px;
+  margin: 1rem;
+  background-color: red;
+
+  & a{
+    text-decoration: none;
+    width: fit-content;
+
+    & h2{
+      text-align: center;
+      width: 300px;
+      height: 400px;
+    }
+  }
+}
+
+.personCard{
+  list-style: none;
+  
+  & a{
+    text-decoration: none;
+  }
+
+  & img{
+    width: 300px;
+  }
+}
+
+

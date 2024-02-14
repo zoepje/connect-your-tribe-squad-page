@@ -6,9 +6,9 @@
   <ul>
     <!-- Met de forEach loop zorg ik ervoor dat hij voor elke squad een li is met alle info erin -->
     <% squads.forEach(squad => { %>
-    <li>
+    <li class="squadCard">
       <a href="./squad/<%= squad.id %>">
-        <h2><%= squad.name %></h2>
+        <h2>Squad <%= squad.name %></h2>
       </a>
     </li>
     <% }) %>

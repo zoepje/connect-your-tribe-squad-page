@@ -1,13 +1,13 @@
 <%- include('./partials/head') %>
 <header>
   <a href="/">Back</a>
-  <h1><%= squad.name %></h1>
+  <h1>Squad <%= squad.name %></h1>
 </header>
 
 <main>
   <ul>
-    <% person.forEach(person => { %>
-      <li>
+    <% persons.forEach(person => { %>
+      <li class="personCard">
         <a href="<%= person.website %>">
           <h2><%= person.name %> <%= person.prefix %> <%= person.surname %> </h2>
           <img src="<%= person.avatar %>" alt="Avatar van <%= person.name %>">
