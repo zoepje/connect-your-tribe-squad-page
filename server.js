@@ -65,6 +65,11 @@ app.get('/squad/:id', function (request, response) {
   })
 })
 
+app.get('/fiter/:query', function(request, response){
+  fetchJson(apiUrl + '/?filter=' + request.params.query).then((filter) => {
+    response.render('filter', {filter: filter.data, persons: personData.data})
+  })
+})
 
 // 3. Start de webserver
 

@@ -7,6 +7,10 @@ h1{
   text-align: center;
 }
 
+a{
+  color: black;
+}
+
 ul{
   display: flex;
   flex-flow: row wrap;
