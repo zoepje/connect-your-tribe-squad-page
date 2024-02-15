@@ -1,3 +1,5 @@
+// 1. Opzetten van de webserver
+
 // Importeer het npm pakket express uit de node_modules map
 import express from 'express'
 
@@ -7,13 +9,11 @@ import fetchJson from './helpers/fetch-json.js'
 // Stel het basis endpoint in
 const apiUrl = 'https://fdnd.directus.app/items'
 
-// Haal alle squads uit de WHOIS API op
+// Haal alle squads uit tribe 1 uit de WHOIS API op
 const squadData = await fetchJson(apiUrl + '/squad/?filter={"tribe_id":1}')
 
 // Haal alle personen uit de WHOIS API op
 const personData = await fetchJson(apiUrl + '/person')
-
-// /?filter={"squad_id":}
 
 // Maak een nieuwe express app aan
 const app = express()
@@ -27,15 +27,17 @@ app.set('views', './views')
 // Gebruik de map 'public' voor statische resources, zoals stylesheets, afbeeldingen en client-side JavaScript
 app.use(express.static('public'))
 
+// 2. Routes die HTTP Requests and Responses afhandelen
+
 // Maak een GET route voor de index
 app.get('/', function (request, response) {
   // Haal alle personen uit de WHOIS API op
-  fetchJson(apiUrl + '/person').then((apiData) => {
+  fetchJson(apiUrl + '/person').then((persons) => {
     // apiData bevat gegevens van alle personen uit alle squads
-    // Je zou dat hier kunnen filteren, sorteren, of zelfs aanpassen, voordat je het doorgeeft aan de view
-
+    
     // Render index.ejs uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
-    response.render('index', {persons: apiData.data, squads: squadData.data})
+    // HTML maken op basis van JSON data
+    response.render('index', {persons: persons.data, squads: squadData.data})
   })
 })
 
@@ -57,14 +59,14 @@ app.get('/person/:id', function (request, response) {
 // Maak een GET route voor een detailpagina met een request parameter id
 app.get('/squad/:id', function (request, response) {
   // Gebruik de request parameter id en haal de juiste squad uit de WHOIS API op
-  fetchJson(apiUrl + '/squad/' + request.params.id).then((apiData) => {
+  fetchJson(apiUrl + '/squad/' + request.params.id).then((squad) => {
     // Render squad.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd squad
-    response.render('squad', {squad: apiData.data, persons: personData.data})
+    response.render('squad', {squad: squad.data, persons: personData.data})
   })
 })
 
 
-
+// 3. Start de webserver
 
 // Stel het poortnummer in waar express op moet gaan luisteren
 app.set('port', process.env.PORT || 8000)
