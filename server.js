@@ -13,7 +13,7 @@ const apiUrl = 'https://fdnd.directus.app/items'
 const squadData = await fetchJson(apiUrl + '/squad/?filter={"tribe_id":1}')
 
 // Haal alle personen uit de WHOIS API op
-const personData = await fetchJson(apiUrl + '/person')
+// const personData = await fetchJson(apiUrl + '/person')
 
 // Maak een nieuwe express app aan
 const app = express()
@@ -58,16 +58,13 @@ app.get('/person/:id', function (request, response) {
 
 // Maak een GET route voor een detailpagina met een request parameter id
 app.get('/squad/:id', function (request, response) {
-  // Gebruik de request parameter id en haal de juiste squad uit de WHOIS API op
-  fetchJson(apiUrl + '/squad/' + request.params.id).then((squad) => {
-    // Render squad.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd squad
-    response.render('squad', {squad: squad.data, persons: personData.data})
-  })
-})
-
-app.get('/fiter/:query', function(request, response){
-  fetchJson(apiUrl + '/?filter=' + request.params.query).then((filter) => {
-    response.render('filter', {filter: filter.data, persons: personData.data})
+  // Gebruik de request parameter id en haal de juiste personen uit de squad uit de WHOIS API op
+  fetchJson(apiUrl + '/person/?filter={"squad_id":' + request.params.id + '}').then((person) => {
+    // Render squad.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd squa
+    let filterData = squadData.data.filter(squad => {
+      return squad.id == request.params.id
+    })
+    response.render('squad', {persons: person.data, squad: filterData})
   })
 })
 

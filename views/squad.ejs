@@ -1,7 +1,10 @@
 <%- include('./partials/head') %>
 <header>
-  <a href="/">Back</a>
-  <h1>Squad <%= squad.name %></h1>
+  <a href="/" class="goback">
+    <span class="material-symbols-outlined">arrow_back</span> 
+    Back
+  </a>
+  <h1>Squad <%= squad[0].name %></h1>
 </header>
 
 <main>
