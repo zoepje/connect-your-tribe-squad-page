@@ -1,4 +1,4 @@
-const images = ["/public/assets/Type_Fire.webp", "/public/assets/Type_Water.webp", "/public/assets/Type_Grass.webp"];
+const images = ["/assets/Type_Fire.webp", "/assets/Type_Water.webp", "/assets/Type_Grass.webp"];
 
 const outElem = document.querySelector('.images');
 
