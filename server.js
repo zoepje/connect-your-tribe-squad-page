@@ -60,10 +60,11 @@ app.get('/person/:id', function (request, response) {
 app.get('/squad/:id', function (request, response) {
   // Gebruik de request parameter id en haal de juiste personen uit de squad uit de WHOIS API op
   fetchJson(apiUrl + '/person/?filter={"squad_id":' + request.params.id + '}').then((person) => {
-    // Render squad.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd squa
+    //Filter de squadData zodat hij alleen maar de squad info van de squad met dit id heeft
     let filterData = squadData.data.filter(squad => {
       return squad.id == request.params.id
     })
+    // Render squad.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd squad
     response.render('squad', {persons: person.data, squad: filterData})
   })
 })
