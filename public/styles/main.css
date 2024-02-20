@@ -12,7 +12,7 @@ a{
 header{
   display: flex;
   align-items: center;
-  background-color: blueviolet;
+  background-color: #ff6a00;
 }
 
 h1{
@@ -31,6 +31,7 @@ h1{
 ul{
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
 }
 
 /* #region nav */
@@ -39,7 +40,7 @@ ul{
   width: 300px;
   height: 400px;
   margin: 1rem;
-  background-color: rgb(255, 106, 0);
+  background-color: #ff6a00;
 
   & a{
     display: flex;
@@ -66,7 +67,7 @@ ul{
   width: 300px;
   height: 400px;
   margin: 1rem;
-  background-color: turquoise;
+  background-color: #ff6a00;
 
   & img{
     width: 300px;
