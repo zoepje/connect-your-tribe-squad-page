@@ -13,11 +13,14 @@ header{
   display: flex;
   align-items: center;
   background-color: #ff6a00;
+
+  & h1{
+    width: 90%;
+  }
 }
 
 h1{
   text-align: center;
-  width: 90%;
 }
 
 .goback{
@@ -35,12 +38,13 @@ ul{
 }
 
 /* #region nav */
-.squadCard{
+.squadcard{
   list-style: none;
   width: 300px;
   height: 400px;
   margin: 1rem;
   background-color: #ff6a00;
+  border-radius: 5%;
 
   & a{
     display: flex;
@@ -59,10 +63,32 @@ ul{
     }
   }
 }
+
+.squadcard::before {
+  content: "";
+  position: absolute;
+  transform: translateX(10px) translateY(10px);
+  width: 300px;
+  height: 400px;
+  z-index: -1;
+  background-color: #e84a5f;
+  border-radius: 5%;
+}
+
+.squadcard::after {
+  content: "";
+  position: absolute;
+  transform: translateX(20px) translateY(20px);
+  width: 300px;
+  height: 400px;
+  z-index: -2;
+  background-color: #cc1a32;
+  border-radius: 5%;
+}
 /* #endregion nav */
 
 /* #region main */
-.personCard{
+.personcard{
   list-style: none;
   width: 300px;
   height: 400px;
