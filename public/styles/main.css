@@ -3,6 +3,24 @@
   scroll-behavior: smooth;
 }
 
+:root{
+  --primary-color: #ff6a00;
+  --secondary-color: #cc1a32;
+
+  --border-radius: 5%;
+  --border: solid white 5px;
+
+  --card-width: 300px;
+  --card-height: 400px;
+  --logo-px: 200px;
+  --avatar-width: 190px;
+  --avatar-height: 190px;
+}
+
+body{
+  background-color: #b1d3d7;
+}
+
 a{
   color: black;
   text-decoration: none;
@@ -12,7 +30,7 @@ a{
 header{
   display: flex;
   align-items: center;
-  background-color: #ff6a00;
+  background-color: var(--primary-color);
 
   & h1{
     width: 90%;
@@ -40,11 +58,12 @@ ul{
 /* #region nav */
 .squadcard{
   list-style: none;
-  width: 300px;
-  height: 400px;
-  margin: 1rem;
-  background-color: #ff6a00;
-  border-radius: 5%;
+  width: var(--card-width);
+  height: var(--card-height);
+  margin: 1.5rem;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  border: var(--border);
 
   & a{
     display: flex;
@@ -58,52 +77,79 @@ ul{
     & img{
       margin: auto;
       margin-top: 4rem;
-      width: 200px;
-      height: 200px;
+      width: var(--logo-px);
+      height: var(--logo-px);
     }
   }
 }
 
-.squadcard::before {
+.squadcard:hover::before {
   content: "";
   position: absolute;
-  transform: translateX(10px) translateY(10px);
-  width: 300px;
-  height: 400px;
+  transform: translateX(3px) translateY(3px);
+  width: var(--card-width);
+  height: var(--card-height);
   z-index: -1;
-  background-color: #e84a5f;
-  border-radius: 5%;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  border: var(--border);
 }
 
-.squadcard::after {
+.squadcard:hover::after {
   content: "";
   position: absolute;
-  transform: translateX(20px) translateY(20px);
-  width: 300px;
-  height: 400px;
+  transform: translateX(20px) translateY(-380px);
+  width: var(--card-width);
+  height: var(--card-height);
   z-index: -2;
-  background-color: #cc1a32;
-  border-radius: 5%;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  border: var(--border);
 }
 /* #endregion nav */
 
 /* #region main */
 .personcard{
   list-style: none;
-  width: 300px;
-  height: 400px;
+  width: var(--card-width);
+  height: var(--card-height);
   margin: 1rem;
-  background-color: #ff6a00;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  border: var(--border);
+
+  & a{
+    display: grid;
+    justify-content: center;
+  }
+
+  & h2{
+    max-width: 250px;
+  }
 
   & img{
-    width: 300px;
-    height: 300px;
+    width: var(--avatar-width);
+    height: var(--avatar-height);
     object-fit: cover;
   }
 
-  & p{
-    padding-left: 10px;
-    margin: 0;
+  & img::before {
+    background-color: hsl(0, 0%, 93.3%);
+    display: block;
+    content: "";
+    position: absolute;
+    width: var(--avatar-width);
+    height: var(--avatar-height);
+  }
+
+  & img::after {
+    content: attr(alt);
+    font-weight: bold;
+    position: absolute;
+    height: var(--avatar-height);
+    width: var(--avatar-width);
+    transform: translateX(-130px);
+    text-align: center;
   }
 }
 /* #endregion main */
