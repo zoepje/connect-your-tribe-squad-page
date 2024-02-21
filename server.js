@@ -14,10 +14,16 @@ const squadData = await fetchJson(apiUrl + '/squad/?filter={"tribe_id":1}')
 
 // Maak een array met alle style bestanden en geef ze de squadid van de squad die deze starter hebben
 const typeCss = [
-  {uri: '/styles/home.css', squad_id: '0'},
-  {uri: '/styles/grass.css', squad_id: '5' },
-  {uri: '/styles/water.css', squad_id: '4' },
+  {uri: '/styles/home.css', squad_id: '0' },
   {uri: '/styles/fire.css', squad_id: '3' },
+  {uri: '/styles/water.css', squad_id: '4'},
+  {uri: '/styles/grass.css', squad_id: '5'},
+]
+
+const typeImg = [
+  {type: 'fire', uri: '/assets/Type_Fire.webp', squad_id: '3'},
+  {type: 'water', uri: '/assets/Type_Water.webp', squad_id: '4'},
+  {type: 'grass', uri: '/assets/Type_Grass.webp', squad_id: '5'},
 ]
 
 // Maak een nieuwe express app aan
@@ -42,7 +48,7 @@ app.get('/', function (request, response) {
     
     // Render index.ejs uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
     // HTML maken op basis van JSON data
-    response.render('index', {persons: persons.data, squads: squadData.data, styles: typeCss})
+    response.render('index', {persons: persons.data, squads: squadData.data, styles: typeCss, images: typeImg})
   })
 })
 
