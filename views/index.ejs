@@ -9,7 +9,7 @@
 
     <li class="squadcard">
       <a href="./squad/<%= squad.id %>">
-        <!-- for elke squad kies juiste image -->
+        <!-- for elke object in de array images maak en img aan -->
         <% for(var i=0; i < images.length; i++) { %>
           <img src="<%= images[i].uri %>" alt="type <%= images[i].type %>">
         <% } %>
