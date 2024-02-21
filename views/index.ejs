@@ -6,10 +6,13 @@
   <ul>
     <!-- Met de forEach loop zorg ik ervoor dat hij voor elke squad een li is met alle info erin -->
     <% squads.forEach(squad => { %>
+
     <li class="squadcard">
       <a href="./squad/<%= squad.id %>">
         <!-- for elke squad kies juiste image -->
-          <img src="assets/Type_Fire.webp" alt="type fire">
+        <% for(var i=0; i < images.length; i++) { %>
+          <img src="<%= images[i].uri %>" alt="type <%= images[i].type %>">
+        <% } %>
         <h2>Squad <%= squad.name %></h2>
       </a>
     </li>
