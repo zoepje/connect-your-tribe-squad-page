@@ -1,7 +1,7 @@
 // 1. Opzetten van de webserver
 
 // Importeer het npm pakket express uit de node_modules map
-import express from 'express'
+import express, { response } from 'express'
 
 // Importeer de zelfgemaakte functie fetchJson uit de ./helpers map
 import fetchJson from './helpers/fetch-json.js'
@@ -12,8 +12,13 @@ const apiUrl = 'https://fdnd.directus.app/items'
 // Haal alle squads uit tribe 1 uit de WHOIS API op
 const squadData = await fetchJson(apiUrl + '/squad/?filter={"tribe_id":1}')
 
-// Haal alle personen uit de WHOIS API op
-// const personData = await fetchJson(apiUrl + '/person')
+// Maak een array met alle style bestanden en geef ze de squadid van de squad die deze starter hebben
+const typeCss = [
+  {uri: '/styles/home.css', squad_id: '0'},
+  {uri: '/styles/grass.css', squad_id: '5' },
+  {uri: '/styles/water.css', squad_id: '4' },
+  {uri: '/styles/fire.css', squad_id: '3' },
+]
 
 // Maak een nieuwe express app aan
 const app = express()
@@ -37,7 +42,7 @@ app.get('/', function (request, response) {
     
     // Render index.ejs uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
     // HTML maken op basis van JSON data
-    response.render('index', {persons: persons.data, squads: squadData.data})
+    response.render('index', {persons: persons.data, squads: squadData.data, styles: typeCss})
   })
 })
 
@@ -64,8 +69,13 @@ app.get('/squad/:id', function (request, response) {
     let filterData = squadData.data.filter(squad => {
       return squad.id == request.params.id
     })
+
+    //Filter de typeCss zodat het juiste css bestand wordt geladen
+    let filterCss = typeCss.filter( typeCss => {
+      return typeCss.squad_id == request.params.id
+    })
     // Render squad.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd squad
-    response.render('squad', {persons: person.data, squad: filterData})
+    response.render('squad', {persons: person.data, squad: filterData, styles: filterCss})
   })
 })
 
@@ -79,3 +89,6 @@ app.listen(app.get('port'), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
+
+
+

@@ -1,0 +1,57 @@
+:root{
+  --primary-color: #f920e7;
+  --secondary-color: #65084b;
+}
+
+/* #region nav */
+.squadcard{
+  list-style: none;
+  width: var(--card-width);
+  height: var(--card-height);
+  margin: 1.5rem;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  border: var(--border);
+
+  & a{
+    display: flex;
+    flex-direction: column;
+
+    & h2{
+      text-align: center;
+      margin-bottom: 5.5rem;
+    }
+
+    & img{
+      margin: auto;
+      margin-top: 4rem;
+      width: var(--logo-px);
+      height: var(--logo-px);
+    }
+  }
+}
+
+.squadcard:hover::before {
+  content: "";
+  position: absolute;
+  transform: translateX(3px) translateY(3px);
+  width: var(--card-width);
+  height: var(--card-height);
+  z-index: -1;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  border: var(--border);
+}
+
+.squadcard:hover::after {
+  content: "";
+  position: absolute;
+  transform: translateX(20px) translateY(-380px);
+  width: var(--card-width);
+  height: var(--card-height);
+  z-index: -2;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  border: var(--border);
+}
+/* #endregion nav */
