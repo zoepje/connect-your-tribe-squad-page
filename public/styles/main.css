@@ -15,7 +15,7 @@
 }
 
 body{
-  background-color: #b1d3d7;
+  background-color: var(--secondary-color);
   padding:0;
   margin:0;
 }
