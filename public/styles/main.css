@@ -25,6 +25,10 @@ a{
   text-decoration: none;
 }
 
+p{
+  font-size: 20px;
+}
+
 /* #region header */
 header{
   display: flex;
@@ -45,6 +49,7 @@ h1{
   display: flex;
   align-items: center;
   width: 5%;
+  min-width: 60px;
   transition-duration: 1ms;
 }
 
@@ -62,6 +67,45 @@ ul{
 }
 
 /* #region main */
+.dropdown{
+  display:flex;
+  flex-direction: column;
+  width: fit-content;
+  padding: 1rem 4rem;
+  font-size: 20px;
+  background-color: var(--tertiary-color);
+
+  & legend{
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  & legend:hover{
+    scale: 1.1;
+  }
+
+  & .sort{
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    height: 0;
+    transition-property: opacity;
+    transition: 0.5s;
+  }
+
+  & a:hover{
+    text-decoration: underline;
+  }
+}
+
+/* Show the sorting options */
+.show{
+  & .sort{
+    opacity: 1;
+    height: 90px;
+  }
+}
+
 .personcard{
   list-style: none;
   width: var(--card-width);

@@ -8,6 +8,16 @@
 </header>
 
 <main>
+  <form class="dropdown">
+    <legend>Sort by:</legend>
+    <div class="sort">
+      <a href="/squad/<%= squad[0].id %>"> Normaal</a>
+      <a href="/squad/<%= squad[0].id %>/?sort=name"> Naam A-Z </a>
+      <a href="/squad/<%= squad[0].id %>/?sort=surname"> Achternaam A-Z</a>
+      <a href="/squad/<%= squad[0].id %>/?sort=nickname"> Nickname A-Z</a>
+    </div>
+  </form>
+
   <ul>
     <% persons.forEach(person => { %>
       <li class="personcard">
