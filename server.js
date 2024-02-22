@@ -59,18 +59,17 @@ app.post('/', function (request, response) {
 })
 
 // Maak een GET route voor een detailpagina met een request parameter id
-app.get('/person/:id', function (request, response) {
-  // Gebruik de request parameter id en haal de juiste persoon uit de WHOIS API op
-  fetchJson(apiUrl + '/person/' + request.params.id).then((apiData) => {
-    // Render person.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd person
-    response.render('person', {person: apiData.data, squads: squadData.data})
-  })
-})
-
-// Maak een GET route voor een detailpagina met een request parameter id
 app.get('/squad/:id', function (request, response) {
+  // Maak een let aan die sortBy heet.
+  let sortBy = ''
+
+  // Als er een sort is maak het als inhoud "&sort=" 
+  if(request.param('sort')) {
+    sortBy = `&sort=${request.param('sort')}`
+  }
+
   // Gebruik de request parameter id en haal de juiste personen uit de squad uit de WHOIS API op
-  fetchJson(apiUrl + '/person/?filter={"squad_id":' + request.params.id + '}').then((person) => {
+  fetchJson(apiUrl + '/person/?filter={"squad_id":' + request.params.id + '}' + sortBy).then((person) => {
     //Filter de squadData zodat hij alleen maar de squad info van de squad met dit id heeft
     let filterData = squadData.data.filter(squad => {
       return squad.id == request.params.id
@@ -84,6 +83,7 @@ app.get('/squad/:id', function (request, response) {
     response.render('squad', {persons: person.data, squad: filterData, styles: filterCss})
   })
 })
+
 
 // 3. Start de webserver
 
