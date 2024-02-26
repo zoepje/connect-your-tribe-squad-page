@@ -26,6 +26,8 @@ const typeImg = [
   {type: 'grass', uri: '/assets/Type_Grass.webp', squad_id: '5'},
 ]
 
+const comments = []
+
 // Maak een nieuwe express app aan
 const app = express()
 
@@ -37,6 +39,9 @@ app.set('views', './views')
 
 // Gebruik de map 'public' voor statische resources, zoals stylesheets, afbeeldingen en client-side JavaScript
 app.use(express.static('public'))
+
+// Zorgt dat werken met request data makkelijker wordt
+app.use(express.urlencoded({extended: true}))
 
 // 2. Routes die HTTP Requests and Responses afhandelen
 
@@ -57,6 +62,7 @@ app.post('/', function (request, response) {
   // Er is nog geen afhandeling van POST, redirect naar GET op /
   response.redirect(303, '/')
 })
+
 
 // Maak een GET route voor een detailpagina met een request parameter id
 app.get('/squad/:id', function (request, response) {
@@ -84,6 +90,22 @@ app.get('/squad/:id', function (request, response) {
   })
 })
 
+// Maak een GET route voor een detailpagina met een request parameter id
+app.get('/person/:id', function (request, response) {
+  // Gebruik de request parameter id en haal de juiste personen uit de squad uit de WHOIS API op
+  fetchJson(apiUrl + '/person/' + request.params.id).then((person) => {
+
+    // Render squad.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd squad
+    response.render('person', {person: person.data, squad: squadData.data, styles: typeCss, comments: comments})
+  })
+})
+
+// Maak een POST route voor person
+app.post('/person/:id', function (request, response) {
+  comments.push(request.body.comment)
+  // Er is nog geen afhandeling van POST, redirect naar GET op /
+  response.redirect(303, '/person/' + request.params.id)
+})
 
 // 3. Start de webserver
 
