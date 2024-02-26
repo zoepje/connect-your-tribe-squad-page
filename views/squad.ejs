@@ -21,7 +21,7 @@
   <ul>
     <% persons.forEach(person => { %>
       <li class="personcard">
-        <a href="<%= person.website %>">
+        <a href="/person/<%= person.id %>">
           <h2><%= person.name %> <%= person.prefix %> <%= person.surname %> </h2>
           <img src="<%= person.avatar %>" alt="Avatar van <%= person.name %>" class="avatar">
           <p>Also known as: <%= person.nickname %></p>
