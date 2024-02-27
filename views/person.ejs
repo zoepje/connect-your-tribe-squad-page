@@ -1,26 +1,33 @@
 <%- include('./partials/head') %>
 
-<h1><%= person.name %> <%= person.prefix %> <%= person.surname %></h1>
-<p> <%= person.nickname %></p>
+<main>
+  <img src="<%= person.avatar %>" alt="avatar van <%= person.name %>">
+  <article>
 
-<form method="POST" action="/person/<%= person.id %>">
-  <button type="submit" name="vote" value="upvote">upvote</button>
-  <button type="submit" name="vote" value="downvote">downvote</button>
-  <label>Votes</label>
-</form>
-
-<ol>
-  <% comments.forEach(comment => { %>
-    <li><%= comment %></li>
-  <% }) %>
-</ol>
-
-<form method="POST" action="/person/<%= person.id %>">
-  <label>
-    Comment:
-    <textarea required name="comment"></textarea>
-  </label>
-  <button type="submit">Sent</button>
-</form>
+    <h1><%= person.name %> <%= person.prefix %> <%= person.surname %></h1>
+    <p> <%= person.nickname %></p>
+  
+    <form method="POST" action="/person/<%= person.id %>">
+      <button type="submit" name="vote" value="upvote">upvote</button>
+      <button type="submit" name="vote" value="downvote">downvote</button>
+      <label>Votes</label>
+    </form>
+  
+    <ol>
+      <% comments.forEach(comment => { %>
+        <li><%= comment %></li>
+      <% }) %>
+    </ol>
+  
+    <form method="POST" action="/person/<%= person.id %>">
+      <label>
+        Comment:
+        <textarea required name="comment"></textarea>
+      </label>
+      <button type="submit">Sent</button>
+    </form>
+  
+  </article>
+</main>
 
 <%- include('./partials/foot') %>
