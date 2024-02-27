@@ -26,18 +26,22 @@
 
     <section class="comments">
       <h2>Comments:</h2>
+      <% if (person.custom.comments && person.custom.comments.length) { %>
       <ol>
-        <% comments.forEach(comment => { %>
+        <% person.custom.comments.forEach(comment => { %>
           <li><%= comment %></li>
         <% }) %>
       </ol>
+      <% } else { %>
+        <p>Er zijn nog geen comments.</p>
+      <% } %>
     
       <form method="POST" action="/person/<%= person.id %>">
         <label>
           Comment:
           <textarea required name="comment"></textarea>
         </label>
-        <button type="submit">Sent</button>
+        <button type="submit" name="actie" value="sent">Sent</button>
       </form>
     </section> 
   </article>
