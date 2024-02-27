@@ -124,6 +124,7 @@ ul{
   & a{
     display: grid;
     justify-content: center;
+    height: var(--card-height);
   }
 
   & h2, p{
