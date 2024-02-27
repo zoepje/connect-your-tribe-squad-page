@@ -121,7 +121,18 @@
 
 /* #region Personpage */
 /* #region main */
-
+main{
+  & img{
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+}
+.pokedex{
+  margin: 0 auto;
+  max-width: 500px;
+}
 /* #endregion main */
 
 /* #endregion Personpage */

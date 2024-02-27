@@ -1,32 +1,45 @@
 <%- include('./partials/head') %>
+<a href="/squad/<%= person.squad_id %>" class="goback">
+  <span class="material-symbols-outlined">arrow_back</span> 
+  Back
+</a>
 
 <main>
   <img src="<%= person.avatar %>" alt="avatar van <%= person.name %>">
-  <article>
+  <article class="pokedex">
 
-    <h1><%= person.name %> <%= person.prefix %> <%= person.surname %></h1>
-    <p> <%= person.nickname %></p>
-  
-    <form method="POST" action="/person/<%= person.id %>">
-      <button type="submit" name="vote" value="upvote">upvote</button>
-      <button type="submit" name="vote" value="downvote">downvote</button>
-      <label>Votes</label>
-    </form>
-  
-    <ol>
-      <% comments.forEach(comment => { %>
-        <li><%= comment %></li>
-      <% }) %>
-    </ol>
-  
-    <form method="POST" action="/person/<%= person.id %>">
-      <label>
-        Comment:
-        <textarea required name="comment"></textarea>
-      </label>
-      <button type="submit">Sent</button>
-    </form>
-  
+    <section class="name">
+      <h1><%= person.name %> <%= person.prefix %> <%= person.surname %></h1>
+      <p> <%= person.nickname %></p>
+    </section>
+
+    <sectoin class="bio">
+      <form method="POST" action="/person/<%= person.id %>">
+        <button type="submit" name="vote" value="upvote">upvote</button>
+        <button type="submit" name="vote" value="downvote">downvote</button>
+        <label>Votes</label>
+      </form>
+
+      <h2>Bio:</h2>
+      <p><%= person.bio %></p>
+    </sectoin>
+
+    <section class="comments">
+      <h2>Comments:</h2>
+      <ol>
+        <% comments.forEach(comment => { %>
+          <li><%= comment %></li>
+        <% }) %>
+      </ol>
+    
+      <form method="POST" action="/person/<%= person.id %>">
+        <label>
+          Comment:
+          <textarea required name="comment"></textarea>
+        </label>
+        <button type="submit">Sent</button>
+      </form>
+    </section> 
   </article>
 </main>
 
