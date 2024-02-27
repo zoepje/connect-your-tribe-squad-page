@@ -32,10 +32,10 @@ app.listen(app.get('port'), function () {
 
 /*** Routes & data***/
 // Stel het basis endpoint in
-const apiUrl = 'https://fdnd.directus.app/items'
+const apiUrl = 'https://fdnd.directus.app/items/'
 
 // Haal alle squads uit tribe 1 uit de WHOIS API op
-const squadData = await fetchJson(apiUrl + '/squad/?filter={"tribe_id":1}')
+const squadData = await fetchJson(apiUrl + 'squad/?filter={"tribe_id":1}')
 
 // Maak een array met alle style bestanden en geef ze de squadid van de squad die deze starter hebben
 const typeCss = [
@@ -58,7 +58,7 @@ const comments = []
 // Maak een GET route voor de index
 app.get('/', function (request, response) {
   // Haal alle personen uit de WHOIS API op
-  fetchJson(apiUrl + '/person').then((persons) => {
+  fetchJson(apiUrl + 'person').then((persons) => {
     // apiData bevat gegevens van alle personen uit alle squads
     
     // Render index.ejs uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
@@ -73,7 +73,6 @@ app.post('/', function (request, response) {
   response.redirect(303, '/')
 })
 
-
 // Maak een GET route voor een detailpagina met een request parameter id
 app.get('/squad/:id', function (request, response) {
   // Maak een let aan die sortBy heet.
@@ -85,7 +84,7 @@ app.get('/squad/:id', function (request, response) {
   }
 
   // Gebruik de request parameter id en haal de juiste personen uit de squad uit de WHOIS API op
-  fetchJson(apiUrl + '/person/?filter={"squad_id":' + request.params.id + '}' + sortBy).then((person) => {
+  fetchJson(apiUrl + 'person/?filter={"squad_id":' + request.params.id + '}' + sortBy).then((person) => {
     //Filter de squadData zodat hij alleen maar de squad info van de squad met dit id heeft
     let filterData = squadData.data.filter(squad => {
       return squad.id == request.params.id
@@ -103,7 +102,7 @@ app.get('/squad/:id', function (request, response) {
 // Maak een GET route voor een detailpagina met een request parameter id
 app.get('/person/:id', function (request, response) {
   // Gebruik de request parameter id en haal de juiste personen uit de squad uit de WHOIS API op
-  fetchJson(apiUrl + '/person/' + request.params.id).then((person) => {
+  fetchJson(apiUrl + 'person/' + request.params.id).then((person) => {
 
     // Render squad.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd squad
     response.render('person', {person: person.data, squad: squadData.data, styles: typeCss, comments: comments})
@@ -116,8 +115,3 @@ app.post('/person/:id', function (request, response) {
   // Er is nog geen afhandeling van POST, redirect naar GET op /
   response.redirect(303, '/person/' + request.params.id)
 })
-
-
-
-
-
