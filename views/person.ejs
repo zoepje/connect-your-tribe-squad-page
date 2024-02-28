@@ -1,4 +1,5 @@
 <%- include('./partials/head') %>
+<!-- Ga terug naar de squad pagina met het zelfde squad_id van deze persoon -->
 <a href="/squad/<%= person.squad_id %>" class="goback">
   <span class="material-symbols-outlined">arrow_back</span> 
   Back
@@ -14,6 +15,7 @@
     </section>
 
     <sectoin class="bio">
+      <!-- up/down vote deze persoon -->
       <form method="POST" action="/person/<%= person.id %>">
         <button type="submit" name="vote" value="upvote">upvote</button>
         <button type="submit" name="vote" value="downvote">downvote</button>
