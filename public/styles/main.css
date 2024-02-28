@@ -104,8 +104,8 @@ ul{
 /* Show the sorting options */
 .show{
   & .sort{
-    opacity: 1;
     z-index: 2;
+    opacity: 1;
     height: 90px;
   }
 }
