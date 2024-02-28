@@ -137,8 +137,9 @@ app.post('/person/:id', function(request, response) {
         apiResponse.data.custom.comments = []
       }
 
+      // Als het custom object nog geen vote heeft, voeg deze dan toe
       if(!apiResponse.data.custom.vote) {
-        apiResponse.data.custom.comments = 0;
+        apiResponse.data.custom.vote = 0;
       }
 
       // Voeg een nieuwe message toe voor deze persoon, aan de hand van het bericht uit het formulier
