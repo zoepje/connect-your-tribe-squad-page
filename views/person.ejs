@@ -17,7 +17,7 @@
       <form method="POST" action="/person/<%= person.id %>">
         <button type="submit" name="vote" value="upvote">upvote</button>
         <button type="submit" name="vote" value="downvote">downvote</button>
-        <label>Votes</label>
+        <label>Votes <%= person.custom.vote %></label>
       </form>
 
       <h2>Bio:</h2>
