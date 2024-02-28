@@ -152,11 +152,6 @@ app.post('/person/:id', function(request, response) {
       apiResponse.data.custom.vote = -1;
     }
 
-      // // Voeg een nieuwe message toe voor deze persoon, aan de hand van het bericht uit het formulier
-      // apiResponse.data.custom.vote.push(request.body.upvote)
-      // // Voeg een nieuwe message toe voor deze persoon, aan de hand van het bericht uit het formulier
-      // apiResponse.data.custom.vote.push(request.body.downvote)
-
     // Stap 3: Sla de data op in de API
     // Voeg de nieuwe lijst messages toe in de WHOIS API,
     // via een PATCH request
