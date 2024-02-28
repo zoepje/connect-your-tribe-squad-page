@@ -158,7 +158,7 @@ app.post('/person/:id', function(request, response) {
     } else if (request.body.vote == 'downvote') {
        apiResponse.data.custom.vote = apiResponse.data.custom.vote - 1;
     }
-    console.log(apiResponse.data.custom.vote)
+  
     // Stap 3: Sla de data op in de API
     // Voeg de nieuwe lijst messages toe in de WHOIS API,
     // via een PATCH request
