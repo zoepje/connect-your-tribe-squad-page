@@ -94,6 +94,13 @@ app.get('/squad/:id', function (request, response) {
     let filterCss = typeCss.filter( typeCss => {
       return typeCss.squad_id == request.params.id
     })
+
+    // Het custom field is een String, dus die moeten we eerst omzetten (= parsen)
+    // naar een Object, zodat we er mee kunnen werken
+    try {
+      person.data.custom = JSON.parse(person.data.custom)
+    } catch (error) {}
+
     // Render squad.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd squad
     response.render('squad', {persons: person.data, squad: filterData, styles: filterCss})
   })
@@ -136,7 +143,7 @@ app.post('/person/:id', function(request, response) {
       if (!apiResponse.data.custom.comments) {
         apiResponse.data.custom.comments = []
       }
-
+     
       // Als het custom object nog geen vote heeft, voeg deze dan toe
       if(!apiResponse.data.custom.vote) {
         apiResponse.data.custom.vote = 0;
@@ -146,12 +153,12 @@ app.post('/person/:id', function(request, response) {
       apiResponse.data.custom.comments.push(request.body.comment)
 
     } else if (request.body.vote == 'upvote') {
-      apiResponse.data.custom.vote = +1;
+      apiResponse.data.custom.vote = apiResponse.data.custom.vote + 1;
 
-    } else if (request.body.vote == 'donwvote') {
-      apiResponse.data.custom.vote = -1;
+    } else if (request.body.vote == 'downvote') {
+       apiResponse.data.custom.vote = apiResponse.data.custom.vote - 1;
     }
-
+    console.log(apiResponse.data.custom.vote)
     // Stap 3: Sla de data op in de API
     // Voeg de nieuwe lijst messages toe in de WHOIS API,
     // via een PATCH request

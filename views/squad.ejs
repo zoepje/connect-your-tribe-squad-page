@@ -25,9 +25,10 @@
     <% persons.forEach(person => { %>
       <li class="personcard">
         <a href="/person/<%= person.id %>">
-          <h2><%= person.name %> <%= person.prefix %> <%= person.surname %> </h2>
+          <h2><%= person.name %> <%= person.prefix %> <%= person.surname %></h2>
           <img src="<%= person.avatar %>" alt="Avatar van <%= person.name %>" class="avatar">
           <p>Also known as: <%= person.nickname %></p>
+          <p>Votes: <%= person.custom.vote %></p>
         </a>
       </li>
     <% }) %>
