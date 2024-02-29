@@ -20,8 +20,35 @@
     </div>
   </form>
 
-  <ul>
-    <!-- For elk persoon maak een listitem aan met en link naar hun personen pagina -->
+
+
+ <div class="pokemon-card-container">
+    <% persons.forEach(person => { %>
+      <div class="pokemon-card">
+        <a href="/person/<%= person.id %>">
+          <div class="pokemonTyping"></div>
+        <h2 class="person-nickname"><%= person.nickname %></h2>
+        <div class="cardPokemon-avatar"><img src="<%= person.avatar %>" alt="<%= person.name %>'s avatar" max width="auto" height="155px"></div>
+        <div class="cardPokemon-information"> <%= person.name %> <%= person.prefix %> <%= person.surname %> </div>
+        <div class="pokemonAttack1">
+          <div class="pokemonStar"></div>
+        </div>
+        <div class="pokemonAttack2">
+          <div class="pokemonStar"></div>
+        </div>
+        <div class="pokemonCard-bio"><%= person.bio %></div>
+      </a>
+    </div>
+    <% }) %>
+ </div>
+</main>
+
+<%- include('./partials/foot') %>
+
+    <!--The first code incase there are a lot of bugs and defects-->
+<!---
+ <ul>
+     For elk persoon maak een listitem aan met en link naar hun personen pagina 
     <% persons.forEach(person => { %>
       <li class="personcard">
         <a href="/person/<%= person.id %>">
@@ -31,7 +58,5 @@
         </a>
       </li>
     <% }) %>
-  </ul>
-</main>
-
-<%- include('./partials/foot') %>
+   </ul> 
+  -->
