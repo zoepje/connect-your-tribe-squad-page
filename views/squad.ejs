@@ -2,21 +2,21 @@
 <header>
   <a href="/" class="goback">
     <span class="material-symbols-outlined">arrow_back</span> 
-    Back
+    Terug
   </a>
   <h1>Squad <%= squad[0].name %></h1>
 </header>
 
 <main>
   <form class="dropdown">
-    <legend>Sort by:</legend>
+    <legend>Sorteer op:</legend>
     <div class="sort">
       <!-- Sorteer deze squadpage op populairitijd naam, achternaam en nickname -->
-      <a href="/squad/<%= squad[0].id %>"> Normaal</a>
+      <a href="/squad/<%= squad[0].id %>"> Standaard</a>
       <!-- <a href="/squad/<%= squad[0].id %>/?sort=custom"> Populairitijd</a> -->
       <a href="/squad/<%= squad[0].id %>/?sort=name"> Naam A-Z </a>
       <a href="/squad/<%= squad[0].id %>/?sort=surname"> Achternaam A-Z</a>
-      <a href="/squad/<%= squad[0].id %>/?sort=nickname"> Nickname A-Z</a>
+      <a href="/squad/<%= squad[0].id %>/?sort=nickname"> Bijnaam A-Z</a>
     </div>
   </form>
 
@@ -27,7 +27,7 @@
         <a href="/person/<%= person.id %>">
           <h2><%= person.name %> <%= person.prefix %> <%= person.surname %></h2>
           <img src="<%= person.avatar %>" alt="Avatar van <%= person.name %>" class="avatar">
-          <p>Also known as: <%= person.nickname %></p>
+          <p>Ook bekend als: <%= person.nickname %></p>
           <p>Votes: <%= person.custom.vote %></p>
         </a>
       </li>
