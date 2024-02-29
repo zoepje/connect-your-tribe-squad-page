@@ -34,10 +34,6 @@
     display: flex;
     flex-direction: column;
     height: var(--pokeball-px);
-
-    & h2{
-      text-align: center;
-    }
   }  
 }
 
@@ -73,6 +69,14 @@
   img {
     height: 300px;
   }
+}
+
+h2 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
 }
 
 /* #endregion Pokeball */
