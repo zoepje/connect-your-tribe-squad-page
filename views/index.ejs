@@ -16,14 +16,16 @@
     <!-- Met de forEach loop zorg ik ervoor dat hij voor elke squad een li is met alle info erin -->
     <% squads.forEach(squad => { %>
 
-    <h2>Squad <%= squad.name %></h2>
-    <li class="pokeball">
+    <li>
+      <div class="pokeball">
       <a href="./squad/<%= squad.id %>">
         <!-- for elke object in de array images maak en img aan -->
         <!-- <% for(var i=0; i < images.length; i++) { %>
           <img src="<%= images[i].uri %>" alt="type <%= images[i].type %>">
         <% } %> -->
       </a>
+      </div>
+      <h2>Squad <%= squad.name %></h2>
     </li>
     <% }) %>
   </ul>
