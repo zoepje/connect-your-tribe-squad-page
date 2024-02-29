@@ -15,8 +15,8 @@
 /* #region Pokeball */
 .pokeball {
   display: block;
-  width: 200px;
-  height: 200px;
+  width: var(--pokeball-px);
+  height: var(--pokeball-px);
   background: radial-gradient(
     white 16px,
     black 17px 18px,
@@ -33,6 +33,7 @@
   & a{
     display: flex;
     flex-direction: column;
+    height: var(--pokeball-px);
 
     & h2{
       text-align: center;
