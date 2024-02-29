@@ -7,8 +7,8 @@
   --border-radius: 5%;
   --border: solid var(--border-color) 5px;
 
-  --card-width: 300px;
-  --card-height: 400px;
+  --card-width: 320px;
+  --card-height: 475px;
   --pokeball-px: 200px;
   --avatar-width: 190px;
   --avatar-height: 190px;
@@ -173,7 +173,8 @@ ul{
 
 .pokemon-card {
   width: var(--card-width);;
-  margin-bottom: 20px;;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
   height: var(--card-height);
   border: 15px solid var( --border-color);
   border-radius: var(--border-radius);
@@ -185,11 +186,15 @@ ul{
 
 }
 
+.person-nickname h2{
+  font-size: 26px;
+}
+
 .cardPokemon-avatar{
   margin-top: 1.25rem;
   margin-left: .5rem;
   width: var(--avatar-width);
-  height: var(--avatar-height);;
+  height: var(--avatar-height);
   background-color: var( --border-color);
   border-radius: var(--border-radius);
   
@@ -216,10 +221,10 @@ ul{
 
 .cardPokemon-information{
   background-color: var( --border-color);
-  width: 300px;
+  width: 165px;
   height: 20px;
   margin-left: 1.75rem;
-  border-radius: 4px;
+  border-radius: 5%;
   filter: drop-shadow(0 0 0.125rem black);
 }
 
