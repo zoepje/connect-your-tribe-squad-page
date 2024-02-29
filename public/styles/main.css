@@ -10,8 +10,8 @@
   --card-width: 320px;
   --card-height: 475px;
   --pokeball-px: 200px;
-  --avatar-width: 190px;
-  --avatar-height: 190px;
+  --avatar-width: 220px;
+  --avatar-height: 180px;
 }
 
 body{
@@ -191,7 +191,7 @@ ul{
 }
 
 .cardPokemon-avatar{
-  margin-top: 1.25rem;
+  margin-top: .25rem;
   margin-left: .5rem;
   width: var(--avatar-width);
   height: var(--avatar-height);
@@ -229,17 +229,17 @@ ul{
 }
 
 .pokemonAttack1{
-  margin-top: 4rem;
+  margin-top: 2.25rem;
   border-bottom: 2px solid black;
 }
 
 .pokemonAttack2{
-  margin-top: 4rem;
+  margin-top: 1.75rem;
   border: 1.5px solid black;
 }
 
 .pokemonCard-bio{
-  margin-top: 2.5rem;
+  margin-top: 1.75rem;
   border: 2px solid #000;
   height: 90px;
 }
