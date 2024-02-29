@@ -183,6 +183,7 @@ ul{
   margin-top: 1.75rem;
   border: 2px solid #000;
   height: 90px;
+  overflow-y: scroll;
 }
 
 .pokemonTyping{
