@@ -174,6 +174,12 @@ ul{
   position: relative;
   background: rgb(227,89,50);
   background: var(--card-background-color)
+
+}
+
+a{
+  display: grid;
+  justify-content: center;
 }
 
 .cardPokemon-avatar{
