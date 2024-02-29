@@ -156,7 +156,8 @@ ul{
   height: var(--avatar-height);
   width: var(--avatar-width);
   transform: translateX(-130px);
-  text-align: center;
+  align-content: center;
+  background-color: none;
 }
 
 .cardPokemon-information{
