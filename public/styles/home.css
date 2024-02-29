@@ -12,113 +12,7 @@
 }
 
 /* #region nav Kies je Squad */
-/* #region squadcards */
-.squadcard{
-  list-style: none;
-  width: var(--card-width);
-  height: var(--card-height);
-  margin: 1.5rem;
-  border-radius: var(--border-radius);
-  border: var(--border);
-
-  & a{
-    display: flex;
-    flex-direction: column;
-
-    & h2{
-      text-align: center;
-      margin-bottom: 5.5rem;
-    }
-
-    & img{
-      margin: auto;
-      margin-top: 4rem;
-      width: var(--logo-px);
-      height: var(--logo-px);
-    }
-  }
-}
-
-.squadcard:nth-of-type(1){
-  background-color: var(--fire-color);
-  & img:nth-of-type(2){
-    display: none;
-  }
-  & img:nth-of-type(3){
-    display: none;
-  }
-}
-
-.squadcard:nth-of-type(2){
-  background-color: var(--water-color);
-  & img:nth-of-type(1){
-    display: none;
-  }
-  & img:nth-of-type(3){
-    display: none;
-  }
-}
-
-.squadcard:nth-of-type(3){
-  background-color: var(--grass-color);
-  & img:nth-of-type(1){
-    display: none;
-  }
-  & img:nth-of-type(2){
-    display: none;
-  }
-}
-/* #endregion squadcards */
-
-/* #region squadcards stack */
-.squadcard:hover::before {
-  content: "";
-  position: absolute;
-  transform: translateX(3px) translateY(3px);
-  width: var(--card-width);
-  height: var(--card-height);
-  z-index: -1;
-  border-radius: var(--border-radius);
-  border: var(--border);
-}
-
-.squadcard:hover::after {
-  content: "";
-  position: absolute;
-  transform: translateX(20px) translateY(-380px);
-  width: var(--card-width);
-  height: var(--card-height);
-  z-index: -2;
-  border-radius: var(--border-radius);
-  border: var(--border);
-}
-
-.squadcard:nth-of-type(1):hover::before{
-  background-color: var(--firedark-color);
-}
-
-.squadcard:nth-of-type(1):hover::after{
-  background-color: var(--firedark-color);
-}
-
-.squadcard:nth-of-type(2):hover::before{
-  background-color: var(--waterdark-color);
-}
-
-.squadcard:nth-of-type(2):hover::after{
-  background-color: var(--waterdark-color);
-}
-
-.squadcard:nth-of-type(3):hover::before{
-  background-color: var(--grassdark-color);
-}
-
-.squadcard:nth-of-type(3):hover::after{
-  background-color: var(--grassdark-color);
-}
-
-/* Pokeball */
-
+/* #region Pokeball */
 .pokeball {
   display: block;
   width: 200px;
@@ -144,10 +38,9 @@
       text-align: center;
       margin-bottom: 5.5rem;
     }
+  }  
 }
-
-
-/* #endregion squadcards stack */
+/* #endregion Pokeball */
 /* #endregion nav Kies je Squad */
 
 /* #region Personpage */
