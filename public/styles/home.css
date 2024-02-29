@@ -37,10 +37,44 @@
 
     & h2{
       text-align: center;
-      margin-bottom: 5.5rem;
     }
   }  
 }
+
+@keyframes shake {
+  0% {
+    transform: translateX(0) rotate(0);
+  }
+  20% {
+    transform: translateX(-10px) rotate(-20deg);
+  }
+  30% {
+    transform: translateX(10px) rotate(20deg);
+  }
+  50% {
+    transform: translateX(-10px) rotate(-10deg);
+  }
+  60% {
+    transform: translateX(10px) rotate(10deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+}
+
+.pokeball:hover {
+  animation: shake 1.25s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+.starter-pokemon {
+  display: flex;
+  justify-content: center;
+
+  img {
+    height: 300px;
+  }
+}
+
 /* #endregion Pokeball */
 /* #endregion nav Kies je Squad */
 
