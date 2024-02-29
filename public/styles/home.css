@@ -1,13 +1,15 @@
-:root{
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
   --primary-color: #1b0819;
   --secondary-color: #b1d3d7;
   --tertiary-color: #ffffff;
 
-  --fire-color: #FF983F;
+  --fire-color: #ff983f;
   --firedark-color: #a56328;
-  --water-color: #3393DD;
+  --water-color: #3393dd;
   --waterdark-color: #246699;
-  --grass-color: #35C04A;
+  --grass-color: #35c04a;
   --grassdark-color: #258433;
 }
 
@@ -18,46 +20,184 @@
   width: var(--pokeball-px);
   height: var(--pokeball-px);
   background: radial-gradient(
-    white 16px,
-    black 17px 18px,
-    white 19px 24px,
-    black 25px 32px,
-    transparent 33px
-  ),
-  linear-gradient(to bottom, red 0 80px, black 81px 96px, white 97px 100%);
+      white 16px,
+      black 17px 18px,
+      white 19px 24px,
+      black 25px 32px,
+      transparent 33px
+    ),
+    linear-gradient(to bottom, red 0 80px, black 81px 96px, white 97px 100%);
   border: 8px solid black;
   border-radius: 10rem;
   box-shadow: inset -16px -8px 0 0 rgba(0, 0, 0, 0.2);
   margin: 3rem;
 
-  & a{
+  & a {
     display: flex;
     flex-direction: column;
     height: var(--pokeball-px);
 
-    & h2{
+    & h2 {
       text-align: center;
       margin-bottom: 5.5rem;
     }
-  }  
+  }
 }
 /* #endregion Pokeball */
 /* #endregion nav Kies je Squad */
 
 /* #region Personpage */
+
+body {
+  min-height: calc(100vh - 1.5rem);
+  position: relative;
+}
+
 /* #region main */
-main{
-  & img{
-    margin: 0 auto;
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
+main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 4rem;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    padding: 0.3rem;
+    max-width: 5450px;
+    background-color: var(--grass-color);
+    border: 0.4rem solid var(--tertiary-color);
+    border-radius: 20px;
+    box-shadow: 0 0 15px 0px var(--primary-color);
+
+    & img {
+      margin: 1rem auto 0.5rem auto;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 100%;
+    }
   }
 }
-.pokedex{
+
+main > div > article.pokedex {
+  font-family: Montserrat Alternates, sans-serif;
   margin: 0 auto;
+  padding: 0 0.5rem;
   max-width: 500px;
+  border-radius: 10px;
+  height: 100%;
+  background-color: var(--tertiary-color);
+
+  & section.name {
+    text-align: center;
+
+    & h1 {
+      font-size: 1.8rem;
+      margin: 0.5rem 0 0.4rem 0;
+    }
+
+    & p {
+      font-size: 1.5rem;
+      margin: 0.4rem 0 1rem 0;
+    }
+  }
 }
+
+main > div > article.pokedex > section.name {
+  text-align: center;
+
+  & h1 {
+    margin: 0.5rem 0 0.4rem 0;
+    font-size: 1.5rem;
+  }
+
+  & p {
+    margin: 0.4rem 0 0rem 0;
+    font-size: 1rem;
+  }
+}
+main > div > article.pokedex > section.bio {
+  font-family: Montserrat;
+
+  & form {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--grass-color);
+
+    & label {
+      flex-basis: 100%;
+      text-align: center;
+    }
+
+    & button {
+      flex-basis: 20%;
+      margin: 0.75rem;
+      background-color: var(--grassdark-color);
+      border: 0;
+      padding: 0.5rem 1rem;
+      border-radius: 5rem;
+      box-shadow: -1px 1px 5px 0px var(--primary-color);
+      color: var(--tertiary-color);
+    }
+  }
+
+  h2 {
+    margin: 0;
+  }
+  p {
+    margin: 0 0 0.5rem 0;
+  }
+}
+
+main > div > article.pokedex > section.comments {
+  font-family: Montserrat;
+  display: flex;
+  justify-content: space-between;
+
+  & article {
+    & h2 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+  
+    & p {
+      margin: 0 0 0.5rem 0;
+    }
+  }
+
+  & form {
+    font-weight: 700;
+    color: var(--grass-color);
+    display: flex;
+    
+
+    & label {
+      font-size: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    & button {
+      margin: auto 0 auto 1rem;
+      max-height: 2rem;
+      background-color: var(--grassdark-color);
+      border: 0;
+      padding: 0.5rem 1rem;
+      border-radius: 5rem;
+      box-shadow: -1px 1px 5px 0px var(--primary-color);
+      color: var(--tertiary-color);
+    }
+  }
+}
+
 /* #endregion main */
 
 /* #endregion Personpage */

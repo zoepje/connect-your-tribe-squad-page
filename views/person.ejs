@@ -6,47 +6,52 @@
 </a>
 
 <main>
-  <img src="<%= person.avatar %>" alt="avatar van <%= person.name %>">
-  <article class="pokedex">
+  <div>
+    <img src="<%= person.avatar %>" alt="avatar van <%= person.name %>">
+    <article class="pokedex">
 
-    <section class="name">
-      <h1><%= person.name %> <%= person.prefix %> <%= person.surname %></h1>
-      <p> <%= person.nickname %></p>
-    </section>
+      <section class="name">
+        <h1><%= person.name %> <%= person.prefix %> <%= person.surname %></h1>
+        <p> <%= person.nickname %></p>
+      </section>
 
-    <sectoin class="bio">
-      <!-- up/down vote deze persoon -->
-      <form method="POST" action="/person/<%= person.id %>">
-        <button type="submit" name="vote" value="upvote">upvote</button>
-        <button type="submit" name="vote" value="downvote">downvote</button>
-        <label>Votes <%= person.custom.vote %></label>
-      </form>
+      <section class="bio">
+        <!-- up/down vote deze persoon -->
+        <form method="POST" action="/person/<%= person.id %>">
+          <label>Votes: <%= person.custom.vote %></label>
+          <button type="submit" name="vote" value="upvote">upvote</button>
+          <button type="submit" name="vote" value="downvote">downvote</button>
+        </form>
 
-      <h2>Bio:</h2>
-      <p><%= person.bio %></p>
-    </sectoin>
+        <h2>Bio:</h2>
+        <p><%= person.bio %></p>
+      </section>
 
-    <section class="comments">
-      <h2>Comments:</h2>
-      <% if (person.custom.comments && person.custom.comments.length) { %>
-      <ol>
-        <% person.custom.comments.forEach(comment => { %>
-          <li><%= comment %></li>
-        <% }) %>
-      </ol>
-      <% } else { %>
-        <p>Er zijn nog geen comments.</p>
-      <% } %>
-    
-      <form method="POST" action="/person/<%= person.id %>">
-        <label>
-          Comment:
-          <textarea required name="comment"></textarea>
-        </label>
-        <button type="submit" name="actie" value="sent">Sent</button>
-      </form>
-    </section> 
-  </article>
+      <section class="comments">
+        <article>
+          <h2>Comments:</h2>
+          <% if (person.custom.comments && person.custom.comments.length) { %>
+          <ol>
+            <% person.custom.comments.forEach(comment => { %>
+              <li><%= comment %></li>
+            <% }) %>
+          </ol>
+          <% } else { %>
+            <p>Er zijn nog geen comments.</p>
+          <% } %>
+        </article>
+      
+        <form method="POST" action="/person/<%= person.id %>">
+          <label>
+            Comment:
+            <textarea required name="comment"></textarea>
+          </label>
+          <button type="submit" name="actie" value="sent">Send</button>
+        </form>
+      </section> 
+    </article>
+  </div>
+  
 </main>
 
 <%- include('./partials/foot') %>
