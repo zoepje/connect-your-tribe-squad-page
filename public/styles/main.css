@@ -5,7 +5,7 @@
 
 :root{
   --border-radius: 5%;
-  --border: solid var(--tertiary-color) 5px;
+  --border: solid var(--border-color) 5px;
 
   --card-width: 300px;
   --card-height: 400px;
@@ -135,10 +135,11 @@ ul{
     width: var(--avatar-width);
     height: var(--avatar-height);
     object-fit: cover;
+    background-color: var(--border-color);
   }
 
   & .avatar::before {
-    background-color: hsl(0, 0%, 93.3%);
+    background-color: var(--border-color);
     display: block;
     content: "";
     position: absolute;

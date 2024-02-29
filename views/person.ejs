@@ -13,7 +13,7 @@
       <p> <%= person.nickname %></p>
     </section>
 
-    <sectoin class="bio">
+    <section class="bio">
       <form method="POST" action="/person/<%= person.id %>">
         <button type="submit" name="vote" value="upvote">upvote</button>
         <button type="submit" name="vote" value="downvote">downvote</button>
