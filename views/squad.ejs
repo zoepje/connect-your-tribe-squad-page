@@ -27,7 +27,7 @@
       <div class="pokemon-card">
         <a href="/person/<%= person.id %>">
         <h2 class="person-nickname"><%= person.nickname %></h2>
-        <div class="cardPokemon-avatar"><img src="<%= person.avatar %>" alt="<%= person.name %>'s avatar" max width="340px" height="auto"></div>
+        <div class="cardPokemon-avatar"><img src="<%= person.avatar %>" alt="<%= person.name %>'s avatar" max width="var(--avatar-width)" height="var(--avatar-height)"></div>
         <div class="cardPokemon-information"> <%= person.name %> <%= person.prefix %> <%= person.surname %> </div>
         <div class="pokemonTyping"></div>
         <div class="pokemonAttack1">
