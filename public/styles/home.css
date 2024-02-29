@@ -37,10 +37,19 @@
 
     & h2{
       text-align: center;
-      margin-bottom: 5.5rem;
     }
   }  
 }
+
+.starter-pokemon {
+  display: flex;
+  justify-content: center;
+
+  img {
+    height: 300px;
+  }
+}
+
 /* #endregion Pokeball */
 /* #endregion nav Kies je Squad */
 
