@@ -50,12 +50,13 @@ h1{
   align-items: center;
   width: 5%;
   min-width: 60px;
-  transition-duration: 1ms;
+  transition-duration: 300ms;
 }
 
 .goback:hover{
-  scale: 1.2;
-  border: 1px solid black;
+  scale: 1.1;
+  transition-duration: 300ms;
+  /* border: 1px solid black; */
 }
 /* #endregion header */
 
