@@ -15,9 +15,16 @@ Dit is een website met een overzicht van alle eerste jaars FDND studenten met al
 <!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
 Als je de website opent krijg je een start pagina waar je een (starter) squad kunt kiezen. Als je op een squad klikt ga je naar die squadpage waar je alle leerlingen uit die squad kunt zien. Elke leerling heeft een (pokemon)kaartje met hun naam en een avatar/pokemon. Als je op dit kaartje klikt ga je naar die persoons z'n pagina die opgemaakt is als een pokedex.
 <!-- Voeg een mooie poster visual toe 📸 -->
-
-
 🌐 https://squadpage.onrender.com/
+
+### 📸 Startpagina
+<img width="700" alt="Startpagina" src="https://github.com/zoepje/connect-your-tribe-squad-page/assets/144004461/44d06879-49e8-4d19-b0d0-9ad4481fc994">
+
+### 📸 Squadpagina
+<img width="700" alt="Squadpagina" src="https://github.com/zoepje/connect-your-tribe-squad-page/assets/144004461/e6430a96-1a51-4f76-ac6a-4a92b2f0af9a">
+
+## 📸 Persoon pagina
+<img width="700" alt="Persoonpagina" src="">
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
