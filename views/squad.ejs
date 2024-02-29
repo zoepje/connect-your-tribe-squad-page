@@ -11,24 +11,50 @@
   <form class="dropdown">
     <legend>Sort by:</legend>
     <div class="sort">
+      <!-- Sorteer deze squadpage op populairitijd naam, achternaam en nickname -->
       <a href="/squad/<%= squad[0].id %>"> Normaal</a>
+      <!-- <a href="/squad/<%= squad[0].id %>/?sort=custom"> Populairitijd</a> -->
       <a href="/squad/<%= squad[0].id %>/?sort=name"> Naam A-Z </a>
       <a href="/squad/<%= squad[0].id %>/?sort=surname"> Achternaam A-Z</a>
       <a href="/squad/<%= squad[0].id %>/?sort=nickname"> Nickname A-Z</a>
     </div>
   </form>
 
-  <ul>
+
+ 
+    <% persons.forEach(person => { %>
+      <div class="pokemon-card">
+        <h2 class="person-nickname"><%= person.nickname %></h2>
+        <div class="cardPokemon-avatar"><img src="<%= person.avatar %>" alt="<%= person.name %>'s avatar"></div>
+        <div class="cardPokemon-information"><%= person.name %></div>
+        <div class="pokemonTyping"></div>
+        <div class="pokemonAttack1">
+          <div class="pokemonStar"></div>
+        </div>
+        <div class="pokemonAttack2">
+          <div class="pokemonStar"></div>
+        </div>
+        <div class="pokemonCard-bio"><%= person.bio %></div>
+      </div>
+    <% }) %>
+ 
+
+    <!--The first code incase there are a lot of bugs and defects-->
+<!---
+ <ul>
+     For elk persoon maak een listitem aan met en link naar hun personen pagina 
     <% persons.forEach(person => { %>
       <li class="personcard">
         <a href="/person/<%= person.id %>">
-          <h2><%= person.name %> <%= person.prefix %> <%= person.surname %> </h2>
+          <h2><%= person.name %> <%= person.prefix %> <%= person.surname %></h2>
           <img src="<%= person.avatar %>" alt="Avatar van <%= person.name %>" class="avatar">
           <p>Also known as: <%= person.nickname %></p>
+          <p>Votes: <%= person.custom.vote %></p>
         </a>
       </li>
     <% }) %>
-  </ul>
+   </ul> 
+  -->
 </main>
 
 <%- include('./partials/foot') %>

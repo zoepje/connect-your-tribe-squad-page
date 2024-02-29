@@ -104,14 +104,15 @@ ul{
 /* Show the sorting options */
 .show{
   & .sort{
-    opacity: 1;
     z-index: 2;
+    opacity: 1;
     height: 90px;
   }
 }
 
 
 /* PersonCard */
+/*
 .personcard{
   list-style: none;
   width: var(--card-width);
@@ -156,6 +157,81 @@ ul{
     transform: translateX(-130px);
     text-align: center;
   }
-}
+} 
+*/
 /* #endregion main */
 
+
+/*PokemonCard*/
+
+.pokemon-card {
+  width: 410px;
+  height: 585px;
+  border: 15px solid var( --border-color);
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  padding: 10px;
+  position: relative;
+  background: rgb(227,89,50);
+  background: var(--card-background-color)
+}
+
+.cardPokemon-avatar{
+  margin-top: 1.25rem;
+  margin-left: .5rem;
+  width: 340px;
+  height: 230px;
+  background-color: var( --border-color);
+  border-radius: var(--border-radius);
+  
+  
+}
+
+.cardPokemon-information{
+  background-color: var( --border-color);
+  width: 300px;
+  height: 20px;
+  margin-left: 1.75rem;
+  border-radius: 4px;
+  filter: drop-shadow(0 0 0.125rem black);
+}
+
+.pokemonAttack1{
+  margin-top: 4rem;
+  border-bottom: 2px solid black;
+}
+
+.pokemonAttack2{
+  margin-top: 4rem;
+  border: 1.5px solid black;
+}
+
+.pokemonCard-bio{
+  margin-top: 2.5rem;
+  border: 2px solid #000;
+  height: 90px;
+}
+
+.pokemonTyping{
+  background: var(--primary-color);
+  background: linear-gradient(200deg,var(--primary-color) 50%,
+  var(--secondary-color) 100%);
+  filter: drop-shadow(0 0 0.125rem black);
+  border-radius: 50%;
+  height: 28px;
+  width: 28px;
+  float: right;
+  margin-right: .5rem;
+}
+
+.pokemonStar{
+  background-color: var(--primary-color);
+  filter: drop-shadow(0 0 0.125rem black);
+  border-radius: 50%;
+  height: 23px;
+  width: 23px;
+  float: left;
+  margin-right: .5rem;
+}
+
+/*end pokemonCard*/
