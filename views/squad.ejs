@@ -21,9 +21,10 @@
   </form>
 
 
- 
+
+ <div class="pokemon-card-container">
     <% persons.forEach(person => { %>
-      <li class="pokemon-card">
+      <div class="pokemon-card">
         <a href="/person/<%= person.id %>">
         <h2 class="person-nickname"><%= person.nickname %></h2>
         <div class="cardPokemon-avatar"><img src="<%= person.avatar %>" alt="<%= person.name %>'s avatar" max width="340px" height="auto"></div>
@@ -37,9 +38,9 @@
         </div>
         <div class="pokemonCard-bio"><%= person.bio %></div>
       </a>
-    </li>
+    </div>
     <% }) %>
- 
+ </div>
 
     <!--The first code incase there are a lot of bugs and defects-->
 <!---

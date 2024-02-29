@@ -164,9 +164,17 @@ ul{
 
 /*PokemonCard*/
 
+.pokemon-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
 .pokemon-card {
-  width: 410px;
-  height: 585px;
+  width: var(--card-width);;
+  margin-bottom: 20px;;
+  height: var(--card-height);
   border: 15px solid var( --border-color);
   border-radius: var(--border-radius);
   box-sizing: border-box;
@@ -177,20 +185,33 @@ ul{
 
 }
 
-a{
-  display: grid;
-  justify-content: center;
-}
-
 .cardPokemon-avatar{
   margin-top: 1.25rem;
   margin-left: .5rem;
-  width: 340px;
-  height: 230px;
+  width: var(--avatar-width);
+  height: var(--avatar-height);;
   background-color: var( --border-color);
   border-radius: var(--border-radius);
   
-  
+}
+
+.cardPokemon-avatar::before{
+  background-color: var(--border-color);
+  display: block;
+  content: "";
+  position: absolute;
+  width: var(--avatar-width);
+  height: var(--avatar-height);
+}
+
+.cardPokemon-avatar::after {
+  content: attr(alt);
+  font-weight: bold;
+  position: absolute;
+  height: var(--avatar-height);
+  width: var(--avatar-width);
+  transform: translateX(-130px);
+  text-align: center;
 }
 
 .cardPokemon-information{
