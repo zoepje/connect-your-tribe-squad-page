@@ -7,11 +7,11 @@
   --border-radius: 5%;
   --border: solid var(--border-color) 5px;
 
-  --card-width: 320px;
-  --card-height: 475px;
+  --card-width: 325px;
+  --card-height: 500px;
   --pokeball-px: 200px;
-  --avatar-width: 220px;
-  --avatar-height: 180px;
+  --avatar-width: 278px;
+  --avatar-height: 183px;
 }
 
 body{
