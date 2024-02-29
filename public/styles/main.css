@@ -138,10 +138,11 @@ ul{
 
 .person-nickname h2{
   font-size: 26px;
+  float: left;
 }
 
-.cardPokemon-avatar ::before{
-  margin-top: .25rem;
+.cardPokemon-avatar{
+  margin-top: .125rem;
   margin-left: .5rem;
   width: var(--avatar-width);
   height: var(--avatar-height);
@@ -157,7 +158,6 @@ ul{
   width: var(--avatar-width);
   transform: translateX(-130px);
   align-content: center;
-  background-color: none;
 }
 
 .cardPokemon-information{
