@@ -140,7 +140,7 @@ ul{
   font-size: 26px;
 }
 
-.cardPokemon-avatar{
+.cardPokemon-avatar ::before{
   margin-top: .25rem;
   margin-left: .5rem;
   width: var(--avatar-width);
