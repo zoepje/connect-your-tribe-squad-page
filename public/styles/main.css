@@ -164,6 +164,13 @@ ul{
 
 /*PokemonCard*/
 
+.pokemon-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
 .pokemon-card {
   width: 410px;
   height: 585px;
@@ -175,11 +182,6 @@ ul{
   background: rgb(227,89,50);
   background: var(--card-background-color)
 
-}
-
-a{
-  display: grid;
-  justify-content: center;
 }
 
 .cardPokemon-avatar{
