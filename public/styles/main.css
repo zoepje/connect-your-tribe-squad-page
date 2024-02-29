@@ -172,7 +172,8 @@ ul{
 
 
 .pokemon-card {
-  width: 410px;
+  width: calc(33.333% - 10px);
+  margin-bottom: 20px;;
   height: 585px;
   border: 15px solid var( --border-color);
   border-radius: var(--border-radius);
