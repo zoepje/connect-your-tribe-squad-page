@@ -101,6 +101,10 @@ body {
   position: relative;
 }
 
+.goback{
+  padding: 10px;
+}
+
 /* #region main */
 main {
   position: absolute;
