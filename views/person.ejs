@@ -6,13 +6,7 @@
 
 <main>
   <div>
-    <%
-        // This is the regex for a valid url
-        const validUrlRegex = new RegExp(/^(http(s):\/\/.)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$/gi);
-        persons.forEach(person => {
-          // If the avatar is not a valid url, replace it with a pokémon with their squad id with a website from [this](https://github.com/PokeAPI/pokeapi/issues/346) forum post
-          const avatar = person.avatar.match(validUrlRegex) ? person.avatar : `https://unpkg.com/pokeapi-sprites@x2.0.2/sprites/pokemon/versions/generation-v/black-white/animated/${person.id}.gif`;
-        <% })%>
+
     <img src="<%= person.avatar %>" alt="avatar van <%= person.name %>">
     <article class="pokedex">
 
