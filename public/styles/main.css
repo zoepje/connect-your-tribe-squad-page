@@ -119,8 +119,8 @@ ul{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin: 0 1rem;
 }
-
 
 .pokemon-card {
   width: var(--card-width);
@@ -134,7 +134,6 @@ ul{
   position: relative;
   background: rgb(227,89,50);
   background: var(--card-background-color)
-
 }
 
 .person-nickname h2{
@@ -149,6 +148,13 @@ ul{
   height: var(--avatar-height);
   background-color: var( --border-color);
   border-radius: var(--border-radius);
+  
+  & img{
+    width: var(--avatar-height);
+    height: var(--avatar-height);
+    object-fit: cover;
+    margin: 0 3rem;
+  }
 }
 
 .cardPokemon-avatar::after {
@@ -184,6 +190,7 @@ ul{
   margin-top: 1.75rem;
   border: 2px solid #000;
   background-color: var(--tertiary-color);
+  padding: 0 5px;
   height: 90px;
   overflow-y: scroll;
 }
