@@ -70,12 +70,7 @@
 }
 
 .starter-pokemon {
-  display: flex;
-  justify-content: center;
-
-  img {
-    height: 300px;
-  }
+  display: none;
 }
 
 h2 {
@@ -87,17 +82,26 @@ ul {
 }
 
 /* #endregion Pokeball */
+@media only screen and (min-width: 600px){
+  .starter-pokemon {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  
+    img {
+      height: 300px;
+    }
+  }
+}
 /* #endregion nav Kies je Squad */
 
 /* #region Personpage */
-
 body {
   min-height: calc(100vh - 1.5rem);
   position: relative;
 }
 
 /* #region main */
-
 main {
   position: absolute;
   width: 100%;
@@ -163,6 +167,7 @@ main > div > article.pokedex > section.name {
     font-size: 1rem;
   }
 }
+
 main > div > article.pokedex > section.bio {
   font-family: Montserrat;
 
@@ -244,7 +249,5 @@ main > div > article.pokedex > section.comments {
     }
   }
 }
-
 /* #endregion main */
-
 /* #endregion Personpage */
